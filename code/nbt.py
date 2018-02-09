@@ -1686,6 +1686,10 @@ class NeuralBeliefTracker:
         print "learn_belief_state_update", self.learn_belief_state_update
 
         dontcare_value = "dontcare"
+        if language == "italian":
+            dontcare_value = "non importa"
+        if language == "german":
+            dontcare_value = "es ist egal"
 
         for slot_name in slots:
             if dontcare_value not in dialogue_ontology[slot_name] and slot_name != "request":
