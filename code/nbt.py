@@ -1644,6 +1644,14 @@ class NeuralBeliefTracker:
             word_vectors[u"addressess"] = word_vectors[u"addresses"]
         if u"dont" in word_vectors:
             word_vectors[u"don't"] = word_vectors[u"dont"]
+            
+        if language == "italian":
+            word_vectors["dontcare"] = word_vectors["non"] + word_vectors["importa"]
+            word_vectors["non importa"] = word_vectors["non"] + word_vectors["importa"]
+        
+        if language == "german":
+            word_vectors["dontcare"] = word_vectors["es"] + word_vectors["ist"] + word_vectors["egal"]
+            word_vectors["es ist egal"] = word_vectors["es"] + word_vectors["ist"] + word_vectors["egal"]
 
         exp_name = config.get("data", "exp_name")
 
