@@ -1066,7 +1066,7 @@ def evaluate_model(dataset_name, sess, model_variables, data, target_slot, utter
     eval_accuracy = round(total_accuracy / element_count, 3)
 
     if print_mode:
-        print "Epoch", epoch_id, "[Accuracy] = ", eval_accuracy, " ----- " # , round(end_time - start_time, 1), "seconds. ---"
+        print "Epoch", epoch_id, "[Accuracy] = ", eval_accuracy, " ----- update coeff:", update_coefficient_load # , round(end_time - start_time, 1), "seconds. ---"
 
     return eval_accuracy
 

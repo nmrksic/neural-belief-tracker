@@ -259,7 +259,7 @@ def model_definition(vector_dimension, label_count, slot_vectors, value_vectors,
 
     if use_softmax:
 
-        if learn_belief_state_update:
+        if False and learn_belief_state_update:
 
             if value_specific_decoder: # value-specific update
                 
@@ -272,6 +272,8 @@ def model_definition(vector_dimension, label_count, slot_vectors, value_vectors,
                 y_combine = tf.matmul(y_past_state, ss_W_memory) + tf.matmul(y_presoftmax, ss_W_current) 
 
             else:
+
+                update_coefficient = tf.constant(0.7)
 
                 a_memory = tf.Variable(tf.random_normal([1, 1]))
                 diag_memory = a_memory * tf.diag(tf.ones(label_size))
