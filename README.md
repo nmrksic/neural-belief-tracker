@@ -2,7 +2,7 @@
 
 Contact: Nikola Mrkšić (nikola.mrksic@gmail.com)
 
-An implementation of the Fully Data-Driven version of the Neural Belief Tracking (NBT) model (ACL 2018, [Fully Statistical Neural Belief Tracking](git@github.com:nmrksic/neural-belief-tracker.git).  
+An implementation of the Fully Data-Driven version of the Neural Belief Tracking (NBT) model (ACL 2018, [Fully Statistical Neural Belief Tracking](https://arxiv.org/abs/1805.11350)).  
 
 This version of the model uses a learned belief state update in place of the rule-based mechanism used in the original paper. Requests are not a focus of this paper and should be ignored in the output.  
 
