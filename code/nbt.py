@@ -378,6 +378,9 @@ def evaluate_woz(evaluated_dialogues, dialogue_ontology):
         # print "\n\nGoal Joint: " + str(round(goal_joint_total, 3)) + "\n"
         slot_gj["joint"] = round(goal_joint_total, 3)
 
+    if "request" in slot_gj:
+        del slot_gj["request"]
+
     return slot_gj
 
 
@@ -1614,11 +1617,11 @@ class NeuralBeliefTracker:
 
         if not os.path.isfile(word_vector_destination): 
             print "Vectors not there, downloading small Paragram and putting it there."
-            os.system("wget https://mi.eng.cam.ac.uk/~nm480/prefix_paragram.txt")
             os.system("mkdir -p word-vectors/")
             os.system("mkdir -p models/")
             os.system("mkdir -p results/")
-            os.system("mv prefix_paragram.txt " + word_vector_destination)
+            os.system("wget -O word-vectors/prefix_paragram.txt https://www.dropbox.com/s/r35ih722bbjpn8b/prefix_paragram.txt?dl=0")
+            word_vector_destination = "word-vectors/prefix_paragram.txt"
 
 
         word_vectors = load_word_vectors(word_vector_destination, primary_language=language)

@@ -259,7 +259,7 @@ def model_definition(vector_dimension, label_count, slot_vectors, value_vectors,
 
     if use_softmax:
 
-        if False and learn_belief_state_update:
+        if learn_belief_state_update:
 
             if value_specific_decoder: # value-specific update
                 
@@ -296,7 +296,7 @@ def model_definition(vector_dimension, label_count, slot_vectors, value_vectors,
             y = tf.nn.softmax(y_combine) # + y_ss_update_contrib)
 
         else:
-            
+            # This code runs the baseline experiments reported in Footnote 2 in the paper. 
             update_coefficient = tf.Variable(0.5) #this scales the contribution of the current turn. 
             y_combine = update_coefficient * y_presoftmax + (1 - update_coefficient) * y_past_state
             y = tf.nn.softmax(y_combine)
