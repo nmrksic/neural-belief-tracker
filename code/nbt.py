@@ -219,7 +219,8 @@ def evaluate_woz(evaluated_dialogues, dialogue_ontology):
                     predicted_value = turn[2]["Prediction"][slot]
                 except:
 
-                    print "PROBLEM WITH", turn, "slot:", slot, "inf slots", informable_slots
+                  print("PROBLEM WITH", turn, "slot:", slot, "inf slots", informable_slots)
+
 
                 if true_value != "none":
                     informable_present = True
